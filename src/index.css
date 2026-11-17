@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #231710;
+    color: #231710;
+    font-family: var(--font-sans);
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.pixel-panel {
+  background-color: #f4ead5;
+  border: 3px solid #4a3121;
+  box-shadow:
+    inset 0 0 0 2px #d8c39e,
+    0 4px 0 #231710;
+}
+
+.pixel-panel-dark {
+  background-color: #3a2619;
+  border: 3px solid #231710;
+  box-shadow:
+    inset 0 0 0 2px #5c3d28,
+    0 4px 0 #160e09;
+}
+
+.pixel-btn {
+  border: 2px solid #231710;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.25),
+    0 3px 0 #231710;
+  transition: transform 100ms ease, background-color 120ms ease;
+}
+
+.pixel-btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 1px 0 #231710;
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "Suncrest Valley",
+  "description": "A 2D 16-bit pastoral pixel-art farming RPG where you grow Spring crops, tend your homestead, and earn 500G to restore the Homestead Banner.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
