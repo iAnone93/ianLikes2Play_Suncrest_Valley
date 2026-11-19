@@ -1,0 +1,177 @@
+{
+ "sheet": "buildings_objects.png",
+ "note": "Free-placed objects, same scale as the farmer and nature objects. Anchor = bottom center of each sprite (x + w/2, y + h). Draw sorted by anchor y with the farmer. 'collision' = suggested blocking box [w,h] at the bottom center (null = walk-through). Fence pieces share one baseline, place them side by side by anchor so the rails meet. gate_open is walkable, gate_closed blocks.",
+ "sprites": {
+  "farmhouse": {
+   "x": 0,
+   "y": 0,
+   "w": 107,
+   "h": 95,
+   "anchor": "bottom-center",
+   "collision": [
+    96,
+    52
+   ],
+   "interaction": "door at bottom center: walk to it to enter / sleep"
+  },
+  "seed_stall": {
+   "x": 109,
+   "y": 0,
+   "w": 62,
+   "h": 63,
+   "anchor": "bottom-center",
+   "collision": [
+    56,
+    24
+   ],
+   "interaction": "stand in front of the counter (bottom center) to buy seeds"
+  },
+  "well": {
+   "x": 173,
+   "y": 0,
+   "w": 42,
+   "h": 58,
+   "anchor": "bottom-center",
+   "collision": [
+    30,
+    22
+   ],
+   "interaction": "stand next to it to refill the watering can"
+  },
+  "shipping_bin": {
+   "x": 217,
+   "y": 0,
+   "w": 43,
+   "h": 35,
+   "anchor": "bottom-center",
+   "collision": [
+    34,
+    16
+   ],
+   "interaction": "stand next to it to ship crops",
+   "note": "filled version; swap with shipping_bin_empty. Both bottoms sit on the same baseline (anchor bottom-center)."
+  },
+  "signpost": {
+   "x": 262,
+   "y": 0,
+   "w": 30,
+   "h": 44,
+   "anchor": "bottom-center",
+   "collision": [
+    8,
+    8
+   ],
+   "interaction": "decoration or hint sign"
+  },
+  "gate_closed": {
+   "x": 0,
+   "y": 97,
+   "w": 32,
+   "h": 24,
+   "anchor": "bottom-center",
+   "collision": [
+    32,
+    8
+   ]
+  },
+  "gate_open": {
+   "x": 34,
+   "y": 97,
+   "w": 21,
+   "h": 24,
+   "anchor": "bottom-center",
+   "collision": null
+  },
+  "fence_h": {
+   "x": 57,
+   "y": 97,
+   "w": 32,
+   "h": 22,
+   "anchor": "bottom-center",
+   "collision": [
+    32,
+    8
+   ]
+  },
+  "fence_end_left": {
+   "x": 91,
+   "y": 97,
+   "w": 19,
+   "h": 24,
+   "anchor": "bottom-center",
+   "collision": [
+    18,
+    8
+   ]
+  },
+  "fence_end_right": {
+   "x": 112,
+   "y": 97,
+   "w": 19,
+   "h": 24,
+   "anchor": "bottom-center",
+   "collision": [
+    18,
+    8
+   ]
+  },
+  "fence_v": {
+   "x": 133,
+   "y": 97,
+   "w": 14,
+   "h": 25,
+   "anchor": "bottom-center",
+   "collision": [
+    8,
+    24
+   ]
+  },
+  "fence_post": {
+   "x": 149,
+   "y": 97,
+   "w": 9,
+   "h": 24,
+   "anchor": "bottom-center",
+   "collision": [
+    8,
+    8
+   ]
+  },
+  "shipping_bin_empty": {
+   "x": 217,
+   "y": 58,
+   "w": 43,
+   "h": 34,
+   "anchor": "bottom-center",
+   "collision": [
+    34,
+    16
+   ],
+   "interaction": "same as shipping_bin; default look when nothing is inside"
+  },
+  "banner_unrestored": {
+   "x": 2,
+   "y": 124,
+   "w": 28,
+   "h": 56,
+   "anchor": "bottom-center",
+   "collision": [
+    14,
+    10
+   ],
+   "interaction": "Interact (Space/click) to see progress toward the 500G goal."
+  },
+  "banner_restored": {
+   "x": 34,
+   "y": 124,
+   "w": 28,
+   "h": 56,
+   "anchor": "bottom-center",
+   "collision": [
+    14,
+    10
+   ],
+   "interaction": "Shown after total earnings reach 500G and the day ends. Same size and baseline as banner_unrestored."
+  }
+ }
+}

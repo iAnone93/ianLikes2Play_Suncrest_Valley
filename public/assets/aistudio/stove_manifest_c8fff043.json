@@ -1,0 +1,14 @@
+{
+ "sheet": "stove_48x56.png",
+ "frameWidth": 48,
+ "frameHeight": 56,
+ "frames": [
+  "unlit",
+  "lit"
+ ],
+ "anchor": {
+  "x": 24,
+  "y": 54
+ },
+ "note": "Frame 0 unlit (default), frame 1 lit with steam and chimney smoke (use while the cooking menu is open). Anchor = bottom-centre of the stove base. Draw at (baseX-24, baseY-54)."
+}

@@ -1,0 +1,11 @@
+{
+ "sheet": "marcus_portraits_96.png",
+ "frameWidth": 96,
+ "frameHeight": 96,
+ "expressions": [
+  "neutral",
+  "smile",
+  "thinking"
+ ],
+ "anchor": "bottom-center"
+}

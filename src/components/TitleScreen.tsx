@@ -67,8 +67,8 @@ export function TitleScreen({ existingSave, onStartNew, onContinue }: TitleScree
                 Continue Farm
               </button>
               <p className="text-xs text-[#5C3D28] font-mono tabular-nums">
-                Spring · Day {existingSave.day} · {formatClock(existingSave.timeMinutes)} ·{' '}
-                {existingSave.gold}G
+                {existingSave.season ?? 'Spring'} Day {existingSave.day} ·{' '}
+                {formatClock(existingSave.timeMinutes)} · {existingSave.gold}G
               </p>
               <button
                 type="button"

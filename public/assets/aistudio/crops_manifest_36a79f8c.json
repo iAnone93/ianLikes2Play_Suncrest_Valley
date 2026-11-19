@@ -1,0 +1,82 @@
+{
+ "tileSize": 32,
+ "sheet": "crops.png",
+ "cellWidth": 32,
+ "cellHeight": 40,
+ "drawOffsetY": -8,
+ "note": "Each cell is 32x40. Draw the cell at (tileX, tileY + drawOffsetY) = (tileX, tileY - 8), x unchanged. The extra 8 px is headroom above the tile for tall plants. Every stage shares the same plant base, at row 21 of the 32x32 soil tile, and every sprite is horizontally centered on the tile. Do not add any other offset. stage1 = just planted, stage4 = ripe.",
+ "sprites": {
+  "turnip_stage1": {
+   "x": 0,
+   "y": 0,
+   "w": 32,
+   "h": 40
+  },
+  "turnip_stage2": {
+   "x": 32,
+   "y": 0,
+   "w": 32,
+   "h": 40
+  },
+  "turnip_stage3": {
+   "x": 64,
+   "y": 0,
+   "w": 32,
+   "h": 40
+  },
+  "turnip_stage4": {
+   "x": 96,
+   "y": 0,
+   "w": 32,
+   "h": 40
+  },
+  "potato_stage1": {
+   "x": 0,
+   "y": 40,
+   "w": 32,
+   "h": 40
+  },
+  "potato_stage2": {
+   "x": 32,
+   "y": 40,
+   "w": 32,
+   "h": 40
+  },
+  "potato_stage3": {
+   "x": 64,
+   "y": 40,
+   "w": 32,
+   "h": 40
+  },
+  "potato_stage4": {
+   "x": 96,
+   "y": 40,
+   "w": 32,
+   "h": 40
+  },
+  "strawberry_stage1": {
+   "x": 0,
+   "y": 80,
+   "w": 32,
+   "h": 40
+  },
+  "strawberry_stage2": {
+   "x": 32,
+   "y": 80,
+   "w": 32,
+   "h": 40
+  },
+  "strawberry_stage3": {
+   "x": 64,
+   "y": 80,
+   "w": 32,
+   "h": 40
+  },
+  "strawberry_stage4": {
+   "x": 96,
+   "y": 80,
+   "w": 32,
+   "h": 40
+  }
+ }
+}

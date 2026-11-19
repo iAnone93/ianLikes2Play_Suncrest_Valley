@@ -1,0 +1,24 @@
+{
+ "sheet": "farmer_hoe_64.png",
+ "frameWidth": 64,
+ "frameHeight": 64,
+ "directions": [
+  "down",
+  "up",
+  "left",
+  "right"
+ ],
+ "frames": 3,
+ "frameDurationMs": [
+  100,
+  100,
+  100
+ ],
+ "note": "Rows: 0 down, 1 up, 2 left, 3 right (mirrored from left). Draw each frame so the feet land where the walk sprite's feet land: at (feetX-32, feetY-60).",
+ "effectOnFrame": 2,
+ "anchor": {
+  "x": 32,
+  "y": 60
+ },
+ "hitFrame": 2
+}

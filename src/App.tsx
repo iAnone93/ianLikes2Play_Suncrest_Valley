@@ -4,9 +4,17 @@
  */
 
 import { useEffect, useRef, useState } from 'react';
+import { CookingModal } from './components/CookingModal';
 import { DaySummaryModal } from './components/DaySummaryModal';
-import { GameHud } from './components/GameHud';
+import { DialogueBox } from './components/DialogueBox';
+import {
+  BannerCelebrationOverlay,
+  GameBottomBar,
+  GameTopBar,
+} from './components/GameHud';
 import { PauseModal } from './components/PauseModal';
+import { QuestLogModal } from './components/QuestLogModal';
+import { SeasonEndModal } from './components/SeasonEndModal';
 import { ShopModal } from './components/ShopModal';
 import { SleepConfirmModal } from './components/SleepConfirmModal';
 import { TitleScreen } from './components/TitleScreen';
@@ -52,6 +60,10 @@ export default function App() {
     }
   }, [hud.phase]);
 
+  useEffect(() => {
+    engineRef.current?.resizeCanvas();
+  }, [hud.phase]);
+
   const handleStartNew = () => {
     engineRef.current?.startNewGame();
   };
@@ -68,11 +80,26 @@ export default function App() {
   };
 
   return (
-    <main className="relative w-screen h-screen overflow-hidden bg-[#1D3319]">
+    <main className="relative flex flex-col w-screen h-screen overflow-hidden bg-[#1D3319]">
+      {hud.phase !== 'TITLE' && (
+        <GameTopBar
+          hud={hud}
+          onPause={() => engineRef.current?.togglePause()}
+          onToggleQuests={() => engineRef.current?.toggleQuestLog()}
+        />
+      )}
+
       {/* Isolated Canvas Layer */}
-      <div className="absolute inset-0">
+      <div className="relative flex-1 min-h-0">
         <canvas ref={canvasRef} className="block w-full h-full pixelated cursor-crosshair" />
       </div>
+
+      {hud.phase !== 'TITLE' && (
+        <GameBottomBar
+          hud={hud}
+          onSelectSlot={(idx) => engineRef.current?.selectQuickSlot(idx)}
+        />
+      )}
 
       {/* Game Shell Overlays */}
       {hud.phase === 'TITLE' && (
@@ -84,10 +111,8 @@ export default function App() {
       )}
 
       {hud.phase !== 'TITLE' && (
-        <GameHud
+        <BannerCelebrationOverlay
           hud={hud}
-          onSelectSlot={(idx) => engineRef.current?.selectQuickSlot(idx)}
-          onPause={() => engineRef.current?.togglePause()}
           onDismissCelebration={() => engineRef.current?.dismissBannerCelebration()}
         />
       )}
@@ -96,6 +121,14 @@ export default function App() {
         <ShopModal
           gold={hud.gold}
           onBuy={handleBuySeed}
+          onClose={() => engineRef.current?.closeModal()}
+        />
+      )}
+
+      {hud.phase === 'COOKING' && hud.cookingStation && (
+        <CookingModal
+          station={hud.cookingStation}
+          onCook={(dishId) => engineRef.current?.cookRecipe(dishId)}
           onClose={() => engineRef.current?.closeModal()}
         />
       )}
@@ -111,6 +144,28 @@ export default function App() {
         <DaySummaryModal
           summary={hud.daySummary}
           onNextDay={() => engineRef.current?.advanceFromDaySummary()}
+        />
+      )}
+
+      {hud.phase === 'SEASON_END' && hud.seasonSummary && (
+        <SeasonEndModal
+          summary={hud.seasonSummary}
+          onContinue={() => engineRef.current?.advanceFromSeasonEnd()}
+        />
+      )}
+
+      {hud.phase === 'DIALOGUE' && hud.dialogue && (
+        <DialogueBox
+          dialogue={hud.dialogue}
+          onAdvance={() => engineRef.current?.advanceDialogue()}
+          onClose={() => engineRef.current?.closeDialogue()}
+        />
+      )}
+
+      {hud.phase === 'QUEST_LOG' && (
+        <QuestLogModal
+          quests={hud.quests}
+          onClose={() => engineRef.current?.closeModal()}
         />
       )}
 

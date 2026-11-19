@@ -1,0 +1,27 @@
+{
+ "frameWidth": 32,
+ "frameHeight": 32,
+ "directions": [
+  "down",
+  "up",
+  "left",
+  "right"
+ ],
+ "framesPerDirection": 3,
+ "anchor": {
+  "x": 16,
+  "y": 30
+ },
+ "note": "Rows: 0 down, 1 up, 2 left, 3 right (mirrored from left). Anchor = paws on the ground, bottom-centre. Draw at (feetX-16, feetY-30).",
+ "sheet": "dog_sit_32x32.png",
+ "animation": "sit_idle",
+ "frameOrder": [
+  0,
+  1,
+  0,
+  2
+ ],
+ "frameDurationMs": 350,
+ "loop": true,
+ "hint": "Frame 0 = tail down, 1 and 2 = tail wag to either side. Play 0,1,0,2."
+}

@@ -1,0 +1,31 @@
+{
+ "tileSize": 32,
+ "sheet": "dishes_32.png",
+ "note": "Cooked dish icons, 32x32 each, same style as icons.png.",
+ "sprites": {
+  "boiled_turnip": {
+   "x": 0,
+   "y": 0,
+   "w": 32,
+   "h": 32
+  },
+  "roasted_potato": {
+   "x": 32,
+   "y": 0,
+   "w": 32,
+   "h": 32
+  },
+  "strawberry_jam": {
+   "x": 64,
+   "y": 0,
+   "w": 32,
+   "h": 32
+  },
+  "veggie_stew": {
+   "x": 96,
+   "y": 0,
+   "w": 32,
+   "h": 32
+  }
+ }
+}

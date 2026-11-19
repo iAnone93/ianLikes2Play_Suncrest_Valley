@@ -1,0 +1,96 @@
+{
+  "sheet": "nature_objects.png",
+  "note": "Not tiles: free-placed objects. Anchor = bottom center of each sprite (x + w/2, y + h). Draw sorted by anchor y so the farmer walks behind trees. 'collision' = suggested blocking box [w,h] at the bottom center (null = walk-through decoration). Chop-able: oak_tree, pine_tree, stump (axe, Stage 2B). Breakable: boulder, rock (pickaxe, Stage 2B).",
+  "sprites": {
+    "oak_tree": {
+      "x": 0,
+      "y": 0,
+      "w": 59,
+      "h": 78,
+      "anchor": "bottom-center",
+      "collision": [
+        14,
+        10
+      ]
+    },
+    "pine_tree": {
+      "x": 61,
+      "y": 0,
+      "w": 45,
+      "h": 79,
+      "anchor": "bottom-center",
+      "collision": [
+        12,
+        10
+      ]
+    },
+    "boulder": {
+      "x": 108,
+      "y": 0,
+      "w": 33,
+      "h": 28,
+      "anchor": "bottom-center",
+      "collision": [
+        30,
+        16
+      ]
+    },
+    "bush": {
+      "x": 143,
+      "y": 0,
+      "w": 28,
+      "h": 23,
+      "anchor": "bottom-center",
+      "collision": [
+        24,
+        10
+      ]
+    },
+    "stump": {
+      "x": 173,
+      "y": 0,
+      "w": 30,
+      "h": 23,
+      "anchor": "bottom-center",
+      "collision": [
+        24,
+        12
+      ]
+    },
+    "rock": {
+      "x": 205,
+      "y": 0,
+      "w": 25,
+      "h": 18,
+      "anchor": "bottom-center",
+      "collision": [
+        22,
+        10
+      ]
+    },
+    "flower_white": {
+      "x": 0,
+      "y": 81,
+      "w": 24,
+      "h": 22,
+      "anchor": "bottom-center",
+      "collision": null
+    },
+    "flower_yellow": {
+      "x": 26,
+      "y": 81,
+      "w": 24,
+      "h": 22,
+      "anchor": "bottom-center",
+      "collision": null
+    },
+    "flower_pink": {
+      "x": 52,
+      "y": 81,
+      "w": 24,
+      "h": 22,
+      "anchor": "bottom-center",
+      "collision": null
+    }
+  }
+}

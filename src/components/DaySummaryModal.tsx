@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Award, Moon } from 'lucide-react';
+import { getItemIconUrl, subscribeAssetsReady } from '../game/assets';
 import { BANNER_GOAL_GOLD } from '../game/constants';
-import { getSpriteAtlas } from '../game/pixelSprites';
 import type { DaySummaryData } from '../game/types';
 
 interface DaySummaryModalProps {
@@ -10,7 +10,8 @@ interface DaySummaryModalProps {
 }
 
 export function DaySummaryModal({ summary, onNextDay }: DaySummaryModalProps) {
-  const atlas = getSpriteAtlas();
+  const [, setAssetsTick] = useState(0);
+  useEffect(() => subscribeAssetsReady(() => setAssetsTick((n) => n + 1)), []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -45,6 +46,12 @@ export function DaySummaryModal({ summary, onNextDay }: DaySummaryModalProps) {
           </div>
         )}
 
+        {summary.nextDayIsLastDayOfSeason && (
+          <div className="p-3 bg-[#FEF3C7] border-2 border-[#E59A28] text-xs font-semibold text-[#7A4412]">
+            Tomorrow (Day {summary.dayCompleted + 1}) is the last day of the season!
+          </div>
+        )}
+
         {summary.bannerJustRestored && (
           <div className="p-3 bg-[#FFF3CD] border-2 border-[#E59A28] flex items-center gap-3">
             <Award className="w-6 h-6 text-[#C97B12] shrink-0" />
@@ -63,26 +70,32 @@ export function DaySummaryModal({ summary, onNextDay }: DaySummaryModalProps) {
             </div>
           ) : (
             <div className="flex flex-col gap-1.5">
-              {summary.shippedItems.map((item) => (
-                <div
-                  key={item.cropId}
-                  className="flex items-center justify-between p-2 bg-[#EAD8B6] border border-[#4A3121]"
-                >
-                  <div className="flex items-center gap-2.5">
-                    <img
-                      src={atlas.itemIcons[item.cropId]}
-                      alt={item.name}
-                      className="w-6 h-6 pixelated"
-                    />
-                    <span className="text-sm font-semibold text-[#231710]">
-                      {item.name} ×{item.count}
-                    </span>
-                  </div>
-                  <span className="font-mono text-sm font-bold text-[#231710] tabular-nums">
-                    +{item.subtotal}G
-                  </span>
-                </div>
-              ))}
+              {summary.shippedItems.map((item) => {
+                const iconUrl = getItemIconUrl(item.cropId);
+                return (
+                  <div
+                    key={item.cropId}
+                    className="flex items-center justify-between p-2 bg-[#EAD8B6] border border-[#4A3121]"
+                  >
+                    <div className="flex items-center gap-2.5">
+                      {iconUrl && (
+                        <img
+                          src={iconUrl}
+                          alt={item.name}
+                          className="w-8 h-8 pixelated"
+                          draggable={false}
+                        />
+                      )}
+                      <span className="text-sm font-semibold text-[#231710]">
+                        {item.name} ×{item.count}
+                      </span>
+                    </div>
+                      <span className="font-mono text-sm font-bold text-[#231710] tabular-nums">
+                        +{item.subtotal}G
+                      </span>
+                    </div>
+                  );
+                })}
             </div>
           )}
         </div>

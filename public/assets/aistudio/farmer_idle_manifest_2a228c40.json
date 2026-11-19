@@ -1,0 +1,18 @@
+{
+ "sheet": "farmer_idle_32x48.png",
+ "frameWidth": 32,
+ "frameHeight": 48,
+ "directions": [
+  "down",
+  "up",
+  "left",
+  "right"
+ ],
+ "frames": 2,
+ "frameDurationMs": [
+  500,
+  500
+ ],
+ "note": "Rows: 0 down, 1 up, 2 left, 3 right (mirrored from left). Draw each frame so the feet land where the walk sprite's feet land: at (feetX-16, feetY-46).",
+ "loop": true
+}

@@ -1,0 +1,12 @@
+{
+ "sheet": "farmer_portraits_96.png",
+ "frameWidth": 96,
+ "frameHeight": 96,
+ "expressions": [
+  "neutral",
+  "happy",
+  "surprised"
+ ],
+ "anchor": "bottom-center",
+ "note": "Draw at the left inside the dialogue box, 96x96, integer positions, imageSmoothingEnabled=false."
+}

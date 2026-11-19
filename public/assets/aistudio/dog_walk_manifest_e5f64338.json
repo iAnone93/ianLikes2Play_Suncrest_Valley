@@ -1,0 +1,27 @@
+{
+ "frameWidth": 32,
+ "frameHeight": 32,
+ "directions": [
+  "down",
+  "up",
+  "left",
+  "right"
+ ],
+ "framesPerDirection": 3,
+ "anchor": {
+  "x": 16,
+  "y": 30
+ },
+ "note": "Rows: 0 down, 1 up, 2 left, 3 right (mirrored from left). Anchor = paws on the ground, bottom-centre. Draw at (feetX-16, feetY-30).",
+ "sheet": "dog_walk_32x32.png",
+ "animation": "walk",
+ "frameOrder": [
+  0,
+  1,
+  2,
+  1
+ ],
+ "frameDurationMs": 120,
+ "loop": true,
+ "hint": "Frame 1 = left legs forward, 2 = standing/passing, 3 = right legs forward. Play 0,1,2,1."
+}

@@ -1,6 +1,7 @@
+import { useEffect, useState } from 'react';
 import { X, Coins } from 'lucide-react';
+import { getItemIconUrl, subscribeAssetsReady } from '../game/assets';
 import { CROPS, SHOP_CATALOG } from '../game/constants';
-import { getSpriteAtlas } from '../game/pixelSprites';
 import type { CropId } from '../game/types';
 
 interface ShopModalProps {
@@ -10,7 +11,8 @@ interface ShopModalProps {
 }
 
 export function ShopModal({ gold, onBuy, onClose }: ShopModalProps) {
-  const atlas = getSpriteAtlas();
+  const [, setAssetsTick] = useState(0);
+  useEffect(() => subscribeAssetsReady(() => setAssetsTick((n) => n + 1)), []);
 
   return (
     <div className="fixed inset-0 z-20 flex items-center justify-center bg-black/45 px-4 pointer-events-auto">
@@ -48,6 +50,7 @@ export function ShopModal({ gold, onBuy, onClose }: ShopModalProps) {
             const crop = CROPS[cropId];
             const canBuy1 = gold >= crop.seedCost;
             const canBuy5 = gold >= crop.seedCost * 5;
+            const iconUrl = getItemIconUrl(crop.seedId);
             return (
               <div
                 key={cropId}
@@ -55,11 +58,14 @@ export function ShopModal({ gold, onBuy, onClose }: ShopModalProps) {
               >
                 <div className="flex items-center gap-3">
                   <div className="w-11 h-11 bg-[#F4EAD5] border-2 border-[#4A3121] flex items-center justify-center shrink-0">
-                    <img
-                      src={atlas.itemIcons[crop.seedId]}
-                      alt={crop.seedName}
-                      className="w-8 h-8 pixelated"
-                    />
+                    {iconUrl && (
+                      <img
+                        src={iconUrl}
+                        alt={crop.seedName}
+                        className="w-8 h-8 pixelated"
+                        draggable={false}
+                      />
+                    )}
                   </div>
                   <div className="flex flex-col">
                     <span className="font-bold text-sm text-[#231710]">

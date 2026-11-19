@@ -1,0 +1,24 @@
+{
+ "sheet": "farmer_axe_80.png",
+ "frameWidth": 80,
+ "frameHeight": 72,
+ "directions": [
+  "down",
+  "up",
+  "left",
+  "right"
+ ],
+ "frames": 3,
+ "frameDurationMs": [
+  100,
+  100,
+  100
+ ],
+ "note": "Rows: 0 down, 1 up, 2 left, 3 right (mirrored from left). Draw each frame so the feet land where the walk sprite's feet land: at (feetX-40, feetY-60).",
+ "effectOnFrame": 3,
+ "anchor": {
+  "x": 40,
+  "y": 60
+ },
+ "hitFrame": 3
+}

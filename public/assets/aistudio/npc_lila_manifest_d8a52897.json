@@ -1,0 +1,18 @@
+{
+ "sheet": "npc_lila_idle_32x48.png",
+ "frameWidth": 32,
+ "frameHeight": 48,
+ "directions": [
+  "down",
+  "up",
+  "left",
+  "right"
+ ],
+ "frames": 2,
+ "frameDurationMs": [
+  500,
+  500
+ ],
+ "loop": true,
+ "note": "Same frame size and feet position as the farmer idle sheet. Rows: 0 down, 1 up, 2 left, 3 right (mirrored from left). Draw at (feetX-16, feetY-46)."
+}

@@ -1,0 +1,11 @@
+{
+ "sheet": "lila_portraits_96.png",
+ "frameWidth": 96,
+ "frameHeight": 96,
+ "expressions": [
+  "neutral",
+  "happy",
+  "worried"
+ ],
+ "anchor": "bottom-center"
+}

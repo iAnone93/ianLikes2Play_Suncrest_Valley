@@ -20,8 +20,9 @@ export function PauseModal({ onResume, onReturnTitle, onResetFarm }: PauseModalP
         <div className="text-xs text-[#5C3D28] bg-[#EAD8B6] border border-[#C6AF88] p-3 flex flex-col gap-1">
           <div className="font-bold text-[#231710]">Controls</div>
           <div>WASD / Arrows · Move Farmer</div>
-          <div>Space / E / Click · Use Tool or Interact</div>
+          <div>Space / E / Click · Use Tool, Talk, or Interact</div>
           <div>1–0 / Mouse Wheel · Select Quick Slot</div>
+          <div>Q · Village Quests</div>
           <div>Esc · Pause / Close Window</div>
         </div>
 

@@ -1,0 +1,11 @@
+{
+ "sheet": "tobias_portraits_96.png",
+ "frameWidth": 96,
+ "frameHeight": 96,
+ "expressions": [
+  "neutral",
+  "happy",
+  "grumpy"
+ ],
+ "anchor": "bottom-center"
+}
